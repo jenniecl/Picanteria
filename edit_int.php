@@ -6,8 +6,8 @@
 </head>
 
 <body>
-
-<div class="container">
+<center>
+<div class="container" po>
 		
 		
 		<form class="form-horizontal" action="edit.php" method="post">
@@ -19,7 +19,7 @@
 				if($c_platos->count($condicion) == 1){
 					$platos = $c_platos->findOne($condicion);
 				}
-				$namePlato = $platos['autor'];
+				$namePlato = $platos['tipo'];
 			?>
 		  	<div class="control-group">
 		    	<label class="control-label" for="inputNamePlato">Platillo: </label>
@@ -33,7 +33,7 @@
 			<div class="control-group">
 		    	<label class="control-label" for="inputTipo">Tipo</label>
 		    	<div class="controls">
-		      		<textarea name="tipo" rows="6" class="input-xlarge"><?php echo $platos['tipo'] ?></textarea>
+		      		<input type="text" name="tipo" rows="6" class="input-xlarge" value="<?php echo $platos['tipo'] ?>" />
 		    	</div>
 		  	</div>
 
@@ -42,7 +42,7 @@
 		  	<div class="control-group">
 		    	<label class="control-label" for="inputPrecio">Precio</label>
 		    	<div class="controls">
-		      		<textarea name="precio" rows="6" class="input-xlarge"><?php echo $platos['precio'] ?></textarea>
+		      		<input type="text" name="precio" rows="6" class="input-xlarge" value="<?php echo $platos['precio'] ?>" />
 		    	</div>
 		  	</div>
 
@@ -53,7 +53,8 @@
 		    	</div>
 		  	</div>
 		</form>
-
+	</div>
+</center>
 
   <?php include('footer.html');?>
 </body>
